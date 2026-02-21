@@ -2,250 +2,222 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>Super Emily Galaxy</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Super Emily Galaxy</title>
 
-<link href="screenshots/ICON_MOBILE_CENTERED.png" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --glass: rgba(255,255,255,0.08);
-  --glow: rgba(125,211,255,0.35);
+:root{
+  --bg1:#0a0f2e;
+  --bg2:#000814;
+  --accent:#7dd3ff;
+  --text-soft:rgba(255,255,255,0.7);
 }
 
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:Inter, sans-serif;
+  background: radial-gradient(circle at top,#1d2cff,var(--bg1) 40%,var(--bg2) 80%);
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
 }
 
-body {
-  margin: 0;
-  font-family: 'Nunito', sans-serif;
-  background: radial-gradient(circle at top, #2b3cff, #000018 70%);
-  color: white;
-  -webkit-font-smoothing: antialiased;
+/* layout base mobile-first */
+.container{
+  width:100%;
+  max-width:1100px;
+  margin:auto;
+  padding:2rem 1.2rem;
 }
 
-section {
-  max-width: 1080px;
-  margin: auto;
-  padding: 5rem 2rem;
-  animation: fadeUp 1.2s ease forwards;
+/* HERO */
+.hero{
+  text-align:center;
+  padding-top:3rem;
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.hero h1{
+  font-size:2.4rem;
+  font-weight:800;
+  letter-spacing:-0.02em;
+  background:linear-gradient(90deg,#9ad7ff,#ffeaa7,#ffb3df);
+  -webkit-background-clip:text;
+  color:transparent;
+  margin-bottom:1rem;
 }
 
-h1 {
-  text-align: center;
-  font-size: 3.4rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  background: linear-gradient(90deg, #9ad7ff, #ffeaa7, #ffb3df);
-  -webkit-background-clip: text;
-  color: transparent;
-  text-shadow: 0 0 30px rgba(125,211,255,0.6);
-  margin-bottom: 0.8rem;
+.hero p{
+  font-size:1rem;
+  color:var(--text-soft);
+  max-width:500px;
+  margin:0 auto 2rem auto;
 }
 
-.subtitle {
-  text-align: center;
-  font-size: 1.15rem;
-  opacity: 0.75;
-  margin-bottom: 4rem;
+.hero img{
+  width:100%;
+  max-width:420px;
+  border-radius:28px;
+  box-shadow:0 25px 70px rgba(0,0,0,0.6);
 }
 
-.hero {
-  border-radius: 28px;
-  overflow: hidden;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.45);
-  margin-bottom: 4rem;
+/* section card */
+.section{
+  margin-top:4rem;
+  padding:2.5rem 1.8rem;
+  border-radius:36px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(20px);
+  box-shadow:0 0 60px rgba(125,211,255,0.15);
 }
 
-.hero img {
-  width: 100%;
-  display: block;
+.section h2{
+  text-align:center;
+  font-size:1.8rem;
+  margin-bottom:1.5rem;
 }
 
-.box {
-  background: var(--glass);
-  backdrop-filter: blur(20px);
-  border-radius: 36px;
-  padding: 4rem;
-  box-shadow: 0 0 60px var(--glow);
+.section p{
+  text-align:center;
+  line-height:1.8;
+  max-width:700px;
+  margin:0 auto 1.5rem auto;
+  color:var(--text-soft);
 }
 
-.box h2 {
-  font-size: 2.1rem;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  text-align: center;
+/* features */
+.features{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1.2rem;
+  margin-top:2rem;
 }
 
-.box p {
-  line-height: 1.9;
-  font-size: 1.1rem;
-  opacity: 0.9;
-  max-width: 800px;
-  margin: 0 auto 1.8rem auto;
-  text-align: center;
+.feature{
+  background:rgba(0,0,0,0.4);
+  border-radius:22px;
+  padding:1.6rem;
+  text-align:center;
+  transition:transform .3s ease, box-shadow .3s ease;
 }
 
-.features {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  margin: 4rem 0;
+.feature:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.5);
 }
 
-.feature {
-  background: rgba(0,0,0,0.35);
-  border-radius: 24px;
-  padding: 2rem;
-  text-align: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+.feature h3{
+  margin:0 0 .6rem 0;
+  font-size:1.1rem;
 }
 
-.feature:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+/* gallery */
+.gallery{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1.2rem;
+  margin-top:2.5rem;
 }
 
-.feature h3 {
-  margin-top: 0;
-  margin-bottom: 0.8rem;
-  font-weight: 700;
+.gallery img{
+  width:100%;
+  border-radius:24px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.5);
+  transition:transform .4s ease;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin: 4rem 0;
+.gallery img:hover{
+  transform:scale(1.03);
 }
 
-.gallery img {
-  width: 100%;
-  border-radius: 24px;
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+/* info grid */
+.info{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1rem;
+  margin-top:2.5rem;
 }
 
-.gallery img:hover {
-  transform: scale(1.04);
-  box-shadow: 0 30px 70px rgba(125,211,255,0.45);
+.info div{
+  background:rgba(0,0,0,0.45);
+  border-radius:20px;
+  padding:1rem;
+  text-align:center;
+  font-size:.85rem;
 }
 
-.info {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
-  margin-top: 4rem;
+/* footer */
+footer{
+  text-align:center;
+  padding:3rem 1rem;
+  font-size:.8rem;
+  opacity:.6;
 }
 
-.info div {
-  background: rgba(0,0,0,0.45);
-  border-radius: 20px;
-  padding: 1.4rem;
-  text-align: center;
-  font-size: 0.9rem;
-  opacity: 0.9;
+/* Tablet */
+@media(min-width:768px){
+  .hero h1{font-size:3rem;}
+  .features{grid-template-columns:repeat(2,1fr);}
+  .gallery{grid-template-columns:repeat(2,1fr);}
+  .info{grid-template-columns:repeat(3,1fr);}
 }
 
-footer {
-  text-align: center;
-  padding: 4rem 2rem;
-  opacity: 0.6;
-  font-size: 0.85rem;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .features {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .info {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* Desktop */
+@media(min-width:1100px){
+  .features{grid-template-columns:repeat(4,1fr);}
+  .info{grid-template-columns:repeat(5,1fr);}
 }
 </style>
 </head>
 
 <body>
 
-<section>
-
-  <h1>Super Emily Galaxy</h1>
-  <div class="subtitle">
-    Un’avventura spaziale ambientata a Roma!
-  </div>
+<div class="container">
 
   <div class="hero">
-    <img src="screenshots/ICON_MOBILE_CENTERED.png">
+    <h1>Super Emily Galaxy</h1>
+    <p>Un’avventura spaziale ambientata a Roma.</p>
+    <img src="screenshots/ICON_MOBILE_CENTERED.png" alt="Hero">
   </div>
 
-  <div class="box">
+  <div class="section">
     <h2>Un viaggio oltre le stelle</h2>
 
     <p>
-      Super Emily Galaxy è ‘na corsa spaziale tra pianeti fluttuanti e galassie che manco sai dove stai. 
-      Emily affronta missioni assurde, Pasquale il feticista spunta dal nulla, Bryan il cane abbaia ai pianeti e Roma brilla sotto un cielo drogato. 
-      Gravità a 360°, segreti ovunque e musiche che ti fanno vibrare i timpani: qui non c’è solo gioco, c’è caos stellare.
-    </p>
-
-    <p>
-      Ogni galassia introduce nuove idee, nuove sfide
-      e un senso costante di meraviglia.
+      Super Emily Galaxy è una corsa tra pianeti fluttuanti e galassie sospese nel vuoto.
+      Gravità a 360°, missioni segrete e una Roma che brilla sotto un cielo cosmico.
     </p>
 
     <div class="features">
       <div class="feature">
         <h3>Ambientazione</h3>
-        Galassie, pianeti e osservatori sospesi nello spazio, roba che manco sai dove sei.
+        Galassie sospese e osservatori cosmici.
       </div>
       <div class="feature">
         <h3>Gameplay</h3>
-        Gravità a 360°, controlli intuitivi e stronzate sempre nuove da provare.
+        Gravità dinamica e controlli fluidi.
       </div>
       <div class="feature">
         <h3>Esplorazione</h3>
-        Stelle nascoste, missioni alternative e segreti che solo i più furbi trovano.
+        Segreti nascosti e stelle rare.
       </div>
       <div class="feature">
         <h3>Musica</h3>
-        Colonna sonora orchestrale che ti entra nelle orecchie e non te ne esce più.
+        Colonna sonora orchestrale immersiva.
       </div>
     </div>
 
-    <!--
     <div class="gallery">
-      <img src="https://images.nintendolife.com/screenshots/159153/900x.jpg">
-      <img src="https://images.nintendolife.com/screenshots/159154/900x.jpg">
-      <img src="https://images.nintendolife.com/screenshots/159155/900x.jpg">
-      <img src="https://images.nintendolife.com/screenshots/159156/900x.jpg">
-    </div> -->
-
-    <div class="gallery">
-      <img src="screenshots/screenshot-1771621167964.png" alt="Screenshot 1">
-      <img src="screenshots/screenshot-1771621180673.png" alt="Screenshot 2">
-      <img src="screenshots/screenshot-1771621198241.png" alt="Screenshot 3">
-      <img src="screenshots/screenshot-1771422859646.png" alt="Screenshot 4">
+      <img src="screenshots/screenshot-1771621167964.png">
+      <img src="screenshots/screenshot-1771621180673.png">
+      <img src="screenshots/screenshot-1771621198241.png">
+      <img src="screenshots/screenshot-1771422859646.png">
     </div>
 
     <div class="info">
-      <div><strong>Piattaforma</strong><br>PC/Android</div>
+      <div><strong>Piattaforma</strong><br>PC / Android</div>
       <div><strong>Genere</strong><br>Platform 2D</div>
       <div><strong>Giocatori</strong><br>1</div>
       <div><strong>Sviluppatore</strong><br>Francesco Pio Pipino</div>
@@ -253,10 +225,10 @@ footer {
     </div>
   </div>
 
-</section>
+</div>
 
 <footer>
-  Super Emily Galaxy - Francesco Pio Pipino
+  Super Emily Galaxy — Francesco Pio Pipino
 </footer>
 
 </body>
