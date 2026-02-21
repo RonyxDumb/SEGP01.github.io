@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Super Emily Galaxy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="screenshots/ICON_MOBILE_CENTERED.png" rel="stylesheet">
+
+<style>
+:root {
+  --glass: rgba(255,255,255,0.08);
+  --glow: rgba(125,211,255,0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background: radial-gradient(circle at top, #2b3cff, #000018 70%);
+  color: white;
+  -webkit-font-smoothing: antialiased;
+}
+
+section {
+  max-width: 1080px;
+  margin: auto;
+  padding: 5rem 2rem;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  text-align: center;
+  font-size: 3.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, #9ad7ff, #ffeaa7, #ffb3df);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 30px rgba(125,211,255,0.6);
+  margin-bottom: 0.8rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.15rem;
+  opacity: 0.75;
+  margin-bottom: 4rem;
+}
+
+.hero {
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+  margin-bottom: 4rem;
+}
+
+.hero img {
+  width: 100%;
+  display: block;
+}
+
+.box {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border-radius: 36px;
+  padding: 4rem;
+  box-shadow: 0 0 60px var(--glow);
+}
+
+.box h2 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.box p {
+  line-height: 1.9;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto 1.8rem auto;
+  text-align: center;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.feature {
+  background: rgba(0,0,0,0.35);
+  border-radius: 24px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.feature:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.feature h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 24px;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+}
+
+.gallery img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 30px 70px rgba(125,211,255,0.45);
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.info div {
+  background: rgba(0,0,0,0.45);
+  border-radius: 20px;
+  padding: 1.4rem;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+footer {
+  text-align: center;
+  padding: 4rem 2rem;
+  opacity: 0.6;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section>
+
+  <h1>Super Emily Galaxy</h1>
+  <div class="subtitle">
+    Un’avventura spaziale ambientata a Roma!
+  </div>
+
+  <div class="hero">
+    <img src="screenshots/ICON_MOBILE_CENTERED.png">
+  </div>
+
+  <div class="box">
+    <h2>Un viaggio oltre le stelle</h2>
+
+    <p>
+      Super Emily Galaxy è ‘na corsa spaziale tra pianeti fluttuanti e galassie che manco sai dove stai. 
+      Emily affronta missioni assurde, Pasquale il feticista spunta dal nulla, Bryan il cane abbaia ai pianeti e Roma brilla sotto un cielo drogato. 
+      Gravità a 360°, segreti ovunque e musiche che ti fanno vibrare i timpani: qui non c’è solo gioco, c’è caos stellare.
+    </p>
+
+    <p>
+      Ogni galassia introduce nuove idee, nuove sfide
+      e un senso costante di meraviglia.
+    </p>
+
+    <div class="features">
+      <div class="feature">
+        <h3>Ambientazione</h3>
+        Galassie, pianeti e osservatori sospesi nello spazio, roba che manco sai dove sei.
+      </div>
+      <div class="feature">
+        <h3>Gameplay</h3>
+        Gravità a 360°, controlli intuitivi e stronzate sempre nuove da provare.
+      </div>
+      <div class="feature">
+        <h3>Esplorazione</h3>
+        Stelle nascoste, missioni alternative e segreti che solo i più furbi trovano.
+      </div>
+      <div class="feature">
+        <h3>Musica</h3>
+        Colonna sonora orchestrale che ti entra nelle orecchie e non te ne esce più.
+      </div>
+    </div>
+
+    <!--
+    <div class="gallery">
+      <img src="https://images.nintendolife.com/screenshots/159153/900x.jpg">
+      <img src="https://images.nintendolife.com/screenshots/159154/900x.jpg">
+      <img src="https://images.nintendolife.com/screenshots/159155/900x.jpg">
+      <img src="https://images.nintendolife.com/screenshots/159156/900x.jpg">
+    </div> -->
+
+    <div class="gallery">
+      <img src="screenshots/screenshot-1771621167964.png" alt="Screenshot 1">
+      <img src="screenshots/screenshot-1771621180673.png" alt="Screenshot 2">
+      <img src="screenshots/screenshot-1771621198241.png" alt="Screenshot 3">
+      <img src="screenshots/screenshot-1771422859646.png" alt="Screenshot 4">
+    </div>
+
+    <div class="info">
+      <div><strong>Piattaforma</strong><br>PC/Android</div>
+      <div><strong>Genere</strong><br>Platform 2D</div>
+      <div><strong>Giocatori</strong><br>1</div>
+      <div><strong>Sviluppatore</strong><br>Francesco Pio Pipino</div>
+      <div><strong>Anno</strong><br>2026</div>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  Super Emily Galaxy - Francesco Pio Pipino
+</footer>
+
+</body>
+</html>
